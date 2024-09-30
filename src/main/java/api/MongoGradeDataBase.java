@@ -275,7 +275,10 @@ public class MongoGradeDataBase implements GradeDataBase {
                     .members(members)
                     .build();
 
-        } catch(IOException e) {}
+        }
+        catch(IOException e) {
+
+        }
 
         // TODO Task 3b: Implement the logic to get the team information
         // HINT: Look at the formTeam method to get an idea on how to parse the response
