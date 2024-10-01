@@ -103,13 +103,10 @@ public class Application {
             buttonPanel.add(formTeamButton);
             buttonPanel.add(joinTeamButton);
             buttonPanel.add(manageTeamButton);
-            buttonPanel.add(getTopGradeButton);
 
             frame.getContentPane().add(cardPanel, BorderLayout.CENTER);
             frame.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-
             frame.setVisible(true);
-
         });
     }
 
@@ -264,7 +261,6 @@ public class Application {
 
         getAverageButton.addActionListener(event -> {
             final String course = courseField.getText();
-
             try {
                 final float avg = getAverageGradeUseCase.getAverageGrade(course);
                 JOptionPane.showMessageDialog(jFrame, "Average Grade: " + avg);
@@ -277,7 +273,6 @@ public class Application {
 
         getTopButton.addActionListener(event -> {
             final String course = courseField.getText();
-
             try {
                 final float top = getTopGradeUseCase.getTopGrade(course);
                 JOptionPane.showMessageDialog(jFrame, "Top Grade: " + top);
@@ -300,6 +295,7 @@ public class Application {
         theCard.add(new JLabel("The course you want to calculate the team average for:"));
         theCard.add(courseField);
         theCard.add(getAverageButton);
+        theCard.add(getTopButton);
         theCard.add(leaveTeamButton);
         theCard.add(resultLabel);
         return theCard;
